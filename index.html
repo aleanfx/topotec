@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ingenieria, topografia y mantenimiento industrial con cumplimiento legal." />
+  <title>TOPOTEC GG, C.A. | Ingenieria y Servicios Industriales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body class="page page-home" data-page-title="title_home">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-content">
+      <img class="preloader-logo" src="logo_topotec.jpg" alt="TOPOTEC" />
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition"></div>
+
+  <!-- Blob Decorations -->
+  <div class="blob-decoration blob-1"></div>
+  <div class="blob-decoration blob-2"></div>
+  <div class="blob-decoration blob-3"></div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html" aria-label="TOPOTEC GG, C.A.">
+        <span class="logo-orbit">
+          <img class="logo-mark" src="logo_topotec.jpg" alt="Logo TOPOTEC GG, C.A." />
+        </span>
+        <span class="logo-text">
+          TOPOTEC GG, C.A.
+          <span data-i18n="brand_tagline">Ingenieria y Servicios Industriales</span>
+        </span>
+      </a>
+      <div class="nav-links" data-nav-menu>
+        <a href="index.html" aria-current="page" data-i18n="nav_home">Inicio</a>
+        <a href="servicios.html" data-i18n="nav_services">Servicios</a>
+        <a href="proyectos.html" data-i18n="nav_projects">Proyectos</a>
+        <a href="contacto.html" data-i18n="nav_contact">Contacto</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+        <button class="lang-toggle" data-lang-toggle type="button" aria-label="Toggle language">
+          <span data-lang="es"><img src="flag-es.svg" alt="ES" /></span>
+          <span data-lang="en"><img src="flag-en.svg" alt="EN" /></span>
+        </button>
+        <a class="btn btn-primary" href="contacto.html#form" data-i18n="nav_quote">Solicitar cotizacion</a>
+        <button class="nav-toggle" data-nav-toggle type="button" data-i18n="nav_menu">Menu</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow" data-i18n="home_eyebrow">Ingenieria | Topografia | Mantenimiento Industrial</p>
+          <h1 class="hero-title" data-i18n="home_title">
+            Precision tecnica para obras que exigen resultados
+          </h1>
+          <p class="section-subtitle" data-i18n="home_subtitle">
+            Soluciones de ingenieria, topografia y mantenimiento industrial con cumplimiento legal y
+            ejecucion segura.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contacto.html#form" data-i18n="home_primary">Solicitar cotizacion</a>
+            <a class="btn btn-ghost" href="servicios.html" data-i18n="home_secondary">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1" aria-hidden="true">
+          <div class="visual-card primary">
+            <div class="meta" data-i18n="home_visual_meta_1">Capacidad</div>
+            <h3 data-i18n="home_visual_title_1">Ingenieria civil y mantenimiento</h3>
+            <div class="visual-tags">
+              <span class="visual-tag" data-i18n="home_visual_tag_cap_1">Obra civil</span>
+              <span class="visual-tag" data-i18n="home_visual_tag_cap_2">Mantenimiento</span>
+              <span class="visual-tag" data-i18n="home_visual_tag_cap_3">Automatizacion</span>
+            </div>
+          </div>
+          <div class="hero-model" aria-hidden="true">
+            <model-viewer data-model-viewer src="assets/photos/oil_barrel.glb" alt="Barril de petroleo" camera-controls
+              auto-rotate rotation-per-second="22deg" auto-rotate-delay="800" disable-zoom interaction-prompt="none"
+              reveal="auto" environment-image="neutral" exposure="1.2" shadow-intensity="0"
+              loading="eager"></model-viewer>
+          </div>
+          <div class="visual-card secondary">
+            <div class="meta" data-i18n="home_visual_meta_2">Topografia</div>
+            <h3 data-i18n="home_visual_title_2">Precision de campo</h3>
+            <div class="visual-tags">
+              <span class="visual-tag" data-i18n="home_visual_tag_topo_1">Levantamiento</span>
+              <span class="visual-tag" data-i18n="home_visual_tag_topo_2">Replanteo</span>
+              <span class="visual-tag" data-i18n="home_visual_tag_topo_3">Geodesia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number"><span data-count="17" data-suffix="+">0+</span></div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+          <div class="stat-item reveal delay-1">
+            <div class="stat-number"><span data-count="150" data-suffix="+">0+</span></div>
+            <div class="stat-label">Proyectos ejecutados</div>
+          </div>
+          <div class="stat-item reveal delay-2">
+            <div class="stat-number"><span data-count="50" data-suffix="+">0+</span></div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+          <div class="stat-item reveal delay-3">
+            <div class="stat-number"><span data-count="24" data-suffix="/7">0/7</span></div>
+            <div class="stat-label">Soporte disponible</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dense model-section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="home_model_eyebrow">Exploraci&oacute;n 3D</p>
+          <h2 class="section-title" data-i18n="home_model_title">Modelo 3D de referencia</h2>
+          <p class="section-subtitle" data-i18n="home_model_text">
+            Visualizaci&oacute;n interactiva para proyectos de energ&iacute;a e infraestructura.
+          </p>
+        </div>
+        <div class="sketchfab-embed reveal delay-1">
+          <iframe title="Oil Refinery Pack" frameborder="0" allowfullscreen mozallowfullscreen="true"
+            webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+            execution-while-out-of-viewport execution-while-not-rendered web-share loading="lazy"
+            src="https://sketchfab.com/models/acf6701bd4664c2a8a29237a82349135/embed?autostart=1&ui_controls=0&ui_infos=0&ui_hint=0"></iframe>
+        </div>
+        <p class="sketchfab-credit reveal delay-2">
+          <a href="https://sketchfab.com/3d-models/oil-refinery-pack-acf6701bd4664c2a8a29237a82349135?utm_medium=embed&utm_campaign=share-popup&utm_content=acf6701bd4664c2a8a29237a82349135"
+            target="_blank" rel="nofollow">
+            Oil Refinery Pack
+          </a>
+          by
+          <a href="https://sketchfab.com/cg_duck?utm_medium=embed&utm_campaign=share-popup&utm_content=acf6701bd4664c2a8a29237a82349135"
+            target="_blank" rel="nofollow">
+            CG Duck
+          </a>
+          on
+          <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=acf6701bd4664c2a8a29237a82349135"
+            target="_blank" rel="nofollow">
+            Sketchfab
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section dense">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="home_quick_title">Lo esencial, sin rodeos</h2>
+        <div class="quick-list">
+          <article class="quick-item reveal delay-1">
+            <span class="quick-index">01</span>
+            <div class="quick-copy">
+              <h3 data-i18n="home_quick_1_title">Ejecucion segura</h3>
+              <p data-i18n="home_quick_1_text">Planificacion, control y seguridad en obra.</p>
+            </div>
+          </article>
+          <article class="quick-item reveal delay-2">
+            <span class="quick-index">02</span>
+            <div class="quick-copy">
+              <h3 data-i18n="home_quick_2_title">Precision topografica</h3>
+              <p data-i18n="home_quick_2_text">Levantamientos, geodesia y control dimensional.</p>
+            </div>
+          </article>
+          <article class="quick-item reveal delay-3">
+            <span class="quick-index">03</span>
+            <div class="quick-copy">
+              <h3 data-i18n="home_quick_3_title">Cumplimiento legal</h3>
+              <p data-i18n="home_quick_3_text">Habilitacion y solvencias vigentes.</p>
+            </div>
+          </article>
+          <article class="quick-item reveal delay-4">
+            <span class="quick-index">04</span>
+            <div class="quick-copy">
+              <h3 data-i18n="home_quick_4_title">Respuesta rapida</h3>
+              <p data-i18n="home_quick_4_text">Atencion agil para licitaciones y trabajos urgentes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="home_services_title">Servicios clave</p>
+          <h2 class="section-title" data-i18n="home_services_title">Servicios clave</h2>
+          <p class="section-subtitle" data-i18n="home_services_subtitle">
+            Tres lineas que concentran el valor operativo.
+          </p>
+        </div>
+        <div class="grid-3" style="margin-top: 28px;">
+          <article class="card reveal delay-1">
+            <div class="card-media">
+              <img src="assets/photos/card-civil.jpg" alt="" aria-hidden="true" loading="lazy" />
+            </div>
+            <h3 data-i18n="home_service_1_title">Ingenieria y obras civiles</h3>
+            <p data-i18n="home_service_1_text">Construccion, adecuaciones y obras de infraestructura.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="card-media">
+              <img src="assets/photos/card-survey.jpg" alt="" aria-hidden="true" loading="lazy" />
+            </div>
+            <h3 data-i18n="home_service_2_title">Topografia y geodesia</h3>
+            <p data-i18n="home_service_2_text">Levantamientos, replanteos y control dimensional.</p>
+          </article>
+          <article class="card reveal delay-3">
+            <div class="card-media">
+              <img src="assets/photos/card-maintenance.jpg" alt="" aria-hidden="true" loading="lazy" />
+            </div>
+            <h3 data-i18n="home_service_3_title">Mantenimiento industrial</h3>
+            <p data-i18n="home_service_3_text">Oleoductos, gasoductos y sistemas mecanicos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dense" id="respaldo">
+      <div class="container">
+        <div class="dual-panel">
+          <article class="panel reveal">
+            <p class="eyebrow" data-i18n="home_cap_title">Capacidades reales en campo</p>
+            <h2 class="section-title" data-i18n="home_cap_title">Capacidades reales en campo</h2>
+            <p class="section-subtitle" data-i18n="home_cap_subtitle">
+              Equipos, procesos y personal tecnico especializado.
+            </p>
+            <ul class="list compact" style="margin-top: 18px;">
+              <li data-i18n="home_cap_list_1">Estacion total, niveles laser y teodolitos.</li>
+              <li data-i18n="home_cap_list_2">Calibracion, deteccion de metales y estudios de suelo.</li>
+              <li data-i18n="home_cap_list_3">Automatizacion, control e instrumentacion.</li>
+            </ul>
+          </article>
+          <article class="panel reveal delay-1">
+            <p class="eyebrow" data-i18n="company_eyebrow">Empresa</p>
+            <h2 class="panel-title" data-i18n="company_profile_title">Perfil operativo</h2>
+            <p data-i18n="company_profile_text">Datos esenciales para contrataciones y expedientes.</p>
+            <ul class="list compact" style="margin-top: 16px;">
+              <li data-i18n="company_profile_item_1">Razon social: TOPOTEC GG, C.A.</li>
+              <li data-i18n="company_profile_item_2">RIF: J-29666762-4</li>
+              <li data-i18n="company_profile_item_3">Sede principal: Anzoategui, Venezuela</li>
+              <li data-i18n="company_profile_item_4">Habilitados para contratar con el Estado hasta jun 2026</li>
+              <li data-i18n="company_profile_item_5">Constituida en 2008</li>
+            </ul>
+            <div class="panel-divider" aria-hidden="true"></div>
+            <p class="eyebrow" data-i18n="cert_eyebrow">Certificaciones</p>
+            <h3 class="panel-title" data-i18n="cert_title">Cumplimiento legal y solvencias vigentes</h3>
+            <ul class="list compact" style="margin-top: 14px;">
+              <li data-i18n="cert_item_1_title">RNC habilitado</li>
+              <li data-i18n="cert_item_2_title">FAOV</li>
+              <li data-i18n="cert_item_3_title">INCES</li>
+              <li data-i18n="cert_item_4_title">SUSCERTE</li>
+            </ul>
+          </article>
+        </div>
+        <div class="section-divider" aria-hidden="true"></div>
+        <div class="media-ticker reveal" aria-hidden="true">
+          <div class="ticker-track">
+            <div class="ticker-group">
+              <div class="ticker-card"><img src="assets/photos/hero-atlas.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-civil.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-survey.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-maintenance.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/hero-duct.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-automation.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-metal.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/hero-grid.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+            </div>
+            <div class="ticker-group" aria-hidden="true">
+              <div class="ticker-card"><img src="assets/photos/hero-atlas.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-civil.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-survey.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-maintenance.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/hero-duct.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-automation.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/card-metal.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+              <div class="ticker-card"><img src="assets/photos/hero-grid.jpg" alt="" aria-hidden="true"
+                  loading="lazy" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="signal-ticker reveal" aria-hidden="true">
+          <div class="signal-track">
+            <div class="signal-group">
+              <span class="signal-item" data-i18n="company_value_1_title">Seguridad y calidad</span>
+              <span class="signal-item" data-i18n="company_value_2_title">Precision tecnica</span>
+              <span class="signal-item" data-i18n="company_value_3_title">Cumplimiento</span>
+              <span class="signal-item" data-i18n="home_badge_4">Cobertura nacional</span>
+            </div>
+            <div class="signal-group" aria-hidden="true">
+              <span class="signal-item" data-i18n="company_value_1_title">Seguridad y calidad</span>
+              <span class="signal-item" data-i18n="company_value_2_title">Precision tecnica</span>
+              <span class="signal-item" data-i18n="company_value_3_title">Cumplimiento</span>
+              <span class="signal-item" data-i18n="home_badge_4">Cobertura nacional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2 data-i18n="home_cta_title">Listo para tu proximo proyecto</h2>
+          <p data-i18n="home_cta_text">Responde un formulario breve y te contactamos en menos de 24h.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="contacto.html#form" data-i18n="home_cta_primary">Solicitar cotizacion</a>
+            <a class="btn btn-ghost" href="https://wa.me/584129638465" target="_blank" rel="noreferrer"
+              data-i18n="home_cta_secondary">
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>TOPOTEC GG, C.A.</strong>
+        <p data-i18n="brand_tagline">Ingenieria y Servicios Industriales</p>
+        <p data-i18n="footer_legal">Habilitados para contratar con el Estado hasta jun 2026.</p>
+      </div>
+      <div>
+        <div class="footer-label" data-i18n="footer_title">Contacto directo</div>
+        <p><span data-i18n="footer_phone_label">Telefonos</span>: 0412-9638465 / 0414-8117785</p>
+        <p><span data-i18n="footer_email_label">Correo</span>: topotecggcaingenieria@gmail.com</p>
+      </div>
+      <div>
+        <div class="footer-label" data-i18n="footer_address_label">Ubicacion</div>
+        <p data-i18n="footer_address_value">Anzoategui, Venezuela</p>
+        <p><span data-i18n="footer_rif_label">RIF</span>: <span data-i18n="footer_rif_value">J-29666762-4</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- WhatsApp FAB -->
+  <a class="whatsapp-fab" href="https://wa.me/584129638465" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+</body>
+
+</html>
