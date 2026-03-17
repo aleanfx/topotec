@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -465,7 +467,8 @@ body.page-loaded .nav-actions {
   position: absolute;
   border-radius: var(--radius-lg);
   padding: 20px;
-  color: #ffffff !important; /* Force light text for dark card backgrounds */
+  color: #ffffff !important;
+  /* Force light text for dark card backgrounds */
   box-shadow: var(--shadow-card);
   overflow: hidden;
   animation: float 10s ease-in-out infinite;
@@ -513,7 +516,8 @@ body.page-loaded .nav-actions {
   z-index: 1;
   margin-top: 10px;
   font-size: 1.2rem;
-  color: #ffffff !important; /* Force light text */
+  color: #ffffff !important;
+  /* Force light text */
 }
 
 .hero-model {
@@ -531,7 +535,8 @@ body.page-loaded .nav-actions {
 }
 
 .inline-barrel {
-  display: none; /* Only show on mobile */
+  display: none;
+  /* Only show on mobile */
 }
 
 .hero-model model-viewer {
@@ -565,7 +570,8 @@ body.page-loaded .nav-actions {
   border-radius: 999px;
   background: rgba(12, 33, 46, 0.65);
   border: 1px solid rgba(238, 245, 251, 0.22);
-  color: #ffffff !important; /* Force light text */
+  color: #ffffff !important;
+  /* Force light text */
   backdrop-filter: blur(6px);
 }
 
@@ -1099,17 +1105,22 @@ body.page-loaded .nav-actions {
 .modal {
   position: fixed;
   inset: 0;
-  height: 100dvh; /* Stable height for mobile browsers */
-  display: grid; /* Switched to Grid for more robust centering */
+  height: 100dvh;
+  /* Stable height for mobile browsers */
+  display: grid;
+  /* Switched to Grid for more robust centering */
   place-items: center;
   padding: 16px;
-  background: rgba(7, 19, 29, 0.85); /* Slightly darker for better contrast */
+  background: rgba(7, 19, 29, 0.85);
+  /* Slightly darker for better contrast */
   backdrop-filter: blur(8px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition);
-  z-index: 9999; /* Top level */
-  overflow-y: auto; /* Fallback for very long content */
+  z-index: 9999;
+  /* Top level */
+  overflow-y: auto;
+  /* Fallback for very long content */
 }
 
 .modal.is-open {
@@ -1707,12 +1718,12 @@ body.modal-open {
     padding-top: 60px !important;
     margin: 0 !important;
     z-index: 900 !important;
-    
+
     /* Animation state: Hidden */
     transform: translateY(-100%) !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transition: 
+    transition:
       transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       opacity 0.4s ease,
       visibility 0.4s !important;
@@ -1758,10 +1769,21 @@ body.modal-open {
   }
 
   /* Staggered entry animations */
-  body.nav-open .nav-links a:nth-child(1) { transition-delay: 0.2s !important; }
-  body.nav-open .nav-links a:nth-child(2) { transition-delay: 0.28s !important; }
-  body.nav-open .nav-links a:nth-child(3) { transition-delay: 0.36s !important; }
-  body.nav-open .nav-links a:nth-child(4) { transition-delay: 0.44s !important; }
+  body.nav-open .nav-links a:nth-child(1) {
+    transition-delay: 0.2s !important;
+  }
+
+  body.nav-open .nav-links a:nth-child(2) {
+    transition-delay: 0.28s !important;
+  }
+
+  body.nav-open .nav-links a:nth-child(3) {
+    transition-delay: 0.36s !important;
+  }
+
+  body.nav-open .nav-links a:nth-child(4) {
+    transition-delay: 0.44s !important;
+  }
 
   .site-header {
     z-index: 1000 !important;
@@ -1780,7 +1802,8 @@ body.modal-open {
   .grid-4,
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 48px; /* Added vertical breathing room for collapsed grids */
+    gap: 48px;
+    /* Added vertical breathing room for collapsed grids */
   }
 
   .container {
@@ -2507,7 +2530,7 @@ body.light-mode .nav-links a:hover {
 
 /* Light Mode CTA Fix */
 body.light-mode .cta {
-  background: 
+  background:
     linear-gradient(120deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.95)),
     var(--cta-bg-image) !important;
   border-color: rgba(15, 42, 58, 0.15) !important;
@@ -2713,6 +2736,17 @@ body.light-mode .theme-toggle .icon-moon {
     width: 90vw;
   }
 
+  /* Force 1-column symmetry for all grids on mobile */
+  .grid-2, .grid-3, .grid-4, .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .grid-2 > *, .grid-3 > *, .grid-4 > *, .hero-grid > * {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
   .section {
     padding: 48px 0;
   }
@@ -2793,7 +2827,8 @@ body.light-mode .theme-toggle .icon-moon {
   }
 
   .hero-model {
-    display: none; /* Hidden on mobile to keep Hero clean */
+    display: none;
+    /* Hidden on mobile to keep Hero clean */
   }
 
   .model-title-inline {
@@ -2853,23 +2888,36 @@ body.light-mode .theme-toggle .icon-moon {
     height: 26px;
   }
 
-  /* Restore original header flow */
+  /* Professional Mobile Header Overhaul */
+  /* Balanced Mobile Header with Premium Styles */
   .nav {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 12px 0 !important;
+    padding: 12px 24px !important; /* Increased padding to bring elements inward */
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .logo {
+    grid-column: 1 !important;
+    justify-self: start !important;
   }
 
   .nav-center-actions {
+    grid-column: 2 !important;
     display: flex !important;
-    gap: 12px !important;
-    margin: 0 12px !important;
+    gap: 16px !important;
+    justify-self: center !important;
+    margin: 0 !important;
   }
 
   .nav-actions {
+    grid-column: 3 !important;
     display: flex !important;
     align-items: center !important;
+    justify-self: end !important;
+    margin: 0 !important;
   }
 
   .logo-text {
@@ -2880,9 +2928,97 @@ body.light-mode .theme-toggle .icon-moon {
     display: none !important;
   }
 
+  /* Professional Hamburger Icon (SVG) */
   .nav-toggle {
     display: flex !important;
-    margin-left: 8px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-right: -4px !important;
+    cursor: pointer !important;
+    color: var(--color-ink) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative !important;
+    z-index: 2000 !important;
+  }
+
+  .nav-toggle svg {
+    width: 26px !important;
+    height: 26px !important;
+    stroke: currentColor !important;
+    pointer-events: none;
+  }
+
+  .nav-toggle svg line {
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform-origin: center !important;
+    transform-box: fill-box !important;
+  }
+
+  /* "X" State for Premium Menu: Stark White and Thick */
+  body.nav-open .nav-toggle {
+    color: #ffffff !important;
+    background: rgba(238, 245, 251, 0.25) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) !important;
+    transform: scale(1.05) !important;
+  }
+
+  body.nav-open .nav-toggle svg {
+    stroke-width: 3.5 !important;
+  }
+
+  body.nav-open .nav-toggle svg line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg) !important;
+  }
+
+  body.nav-open .nav-toggle svg line:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  body.nav-open .nav-toggle svg line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg) !important;
+  }
+
+  /* Scale Logo for Mobile */
+  .logo-orbit {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .logo-mark {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Extreme Mobile Separation for Empresa Cards */
+  .dual-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 68px !important;
+    margin-top: 24px !important;
+  }
+
+  .panel-divider {
+    height: 1px !important;
+    margin: 50px 0 44px !important;
+    background: rgba(238, 245, 251, 0.15) !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  .panel-title {
+    margin-bottom: 16px !important;
+  }
+
+  .panel {
+    padding: 28px !important;
+    border: 1px solid rgba(238, 245, 251, 0.1) !important;
   }
 
   /* Form actions centering & compactness */
@@ -2926,13 +3062,16 @@ body.light-mode .theme-toggle .icon-moon {
   }
 
   .modal-dialog {
-    width: 92vw !important; /* Slightly narrower for better framing */
-    max-height: 85vh !important; /* Cap height to ensure it doesn't hit edge-to-edge */
+    width: 92vw !important;
+    /* Slightly narrower for better framing */
+    max-height: 85vh !important;
+    /* Cap height to ensure it doesn't hit edge-to-edge */
     padding: 24px !important;
     margin: 0 !important;
     transform: scale(0.98) !important;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8) !important;
-    overflow-y: auto !important; /* Ensure internal scrolling if content is long */
+    overflow-y: auto !important;
+    /* Ensure internal scrolling if content is long */
   }
 
   .modal.is-open .modal-dialog {
@@ -2956,21 +3095,26 @@ body.light-mode .theme-toggle .icon-moon {
 
   /* Minimalist & Organized Footer */
   .site-footer {
-    padding: 16px 0 12px; /* Ultra-compact padding */
-    border-top: 1px solid rgba(255, 255, 255, 0.03); /* Minimalist subtle border */
-    background: rgba(4, 12, 20, 0.8); /* Slightly darker for depth */
+    padding: 16px 0 12px;
+    /* Ultra-compact padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    /* Minimalist subtle border */
+    background: rgba(4, 12, 20, 0.8);
+    /* Slightly darker for depth */
   }
 
   .footer-grid {
-    gap: 10px; /* High-density gap */
+    gap: 10px;
+    /* High-density gap */
   }
 
-  .footer-grid > div {
+  .footer-grid>div {
     padding-bottom: 6px;
   }
 
   .site-footer strong {
-    font-size: 0.75rem; /* Shrunken to professional level */
+    font-size: 0.75rem;
+    /* Shrunken to professional level */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-ink);
@@ -2978,14 +3122,16 @@ body.light-mode .theme-toggle .icon-moon {
 
   .footer-label {
     margin-bottom: 2px;
-    font-size: 0.62rem; /* Ultra-small minimalist labels */
+    font-size: 0.62rem;
+    /* Ultra-small minimalist labels */
     color: var(--color-slate);
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
   .site-footer p {
-    font-size: 0.68rem; /* Shrunken content text */
+    font-size: 0.68rem;
+    /* Shrunken content text */
     line-height: 1.3;
     color: rgba(238, 245, 251, 0.6);
     margin-bottom: 1px;
@@ -3019,12 +3165,13 @@ body.light-mode .theme-toggle .icon-moon {
 
   .panel {
     padding: 26px !important;
-    margin-bottom: 8px; /* Small push to avoid adjacent panels touching */
+    margin-bottom: 8px;
+    /* Small push to avoid adjacent panels touching */
   }
 
   .contact-card {
-    align-self: stretch !important;
-    margin-bottom: 24px; /* Extra push for the contact info card before form */
+    margin-bottom: 24px;
+    /* Extra push for the contact info card before form */
   }
 }
 

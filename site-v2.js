@@ -802,27 +802,54 @@ const initCardTilt = () => {
   const cards = document.querySelectorAll(".card");
   if (!cards.length) return;
 
+  const handleMove = (e, card, isTouch = false) => {
+    const rect = card.getBoundingClientRect();
+    const clientX = isTouch ? e.touches[0].clientX : e.clientX;
+    const clientY = isTouch ? e.touches[0].clientY : e.clientY;
+
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Dampen effect for mobile to keep it subtle/premium
+    const factor = isTouch ? 16 : 8;
+    const rotateX = (y - centerY) / factor;
+    const rotateY = (centerX - x) / factor;
+
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px)`;
+  };
+
+  const handleReset = (card) => {
+    card.style.transition = "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+    card.style.transform = "perspective(800px) rotateX(0) rotateY(0) translateZ(0)";
+  };
+
   cards.forEach(card => {
-    card.style.transition = "transform 0.15s ease-out";
+    // Initial smooth state
+    card.style.willChange = "transform";
+    card.style.transition = "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
 
+    // Desktop
     card.addEventListener("mousemove", (e) => {
-      card.style.transition = "none";
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 8;
-      const rotateY = (centerX - x) / 8;
-
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      card.style.transition = "transform 0.1s linear"; // Tight response for mouse
+      handleMove(e, card, false);
     });
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transition = "transform 0.25s ease-out";
-      card.style.transform = "perspective(800px) rotateX(0) rotateY(0) translateZ(0)";
-    });
+    card.addEventListener("mouseleave", () => handleReset(card));
+
+    // Mobile
+    card.addEventListener("touchstart", () => {
+      card.style.transition = "transform 0.2s ease-out";
+    }, { passive: true });
+
+    card.addEventListener("touchmove", (e) => {
+      // Prevent clash with scroll if movement is primarily vertical
+      handleMove(e, card, true);
+    }, { passive: true });
+
+    card.addEventListener("touchend", () => handleReset(card));
+    card.addEventListener("touchcancel", () => handleReset(card));
   });
 };
 
