@@ -2580,49 +2580,61 @@ body.light-mode .theme-toggle .icon-moon {
   }
 
   .hero-title {
-    font-size: 2rem; /* Much smaller for mobile */
-    line-height: 1.2;
+    font-size: 1.85rem; /* Even more minimalist */
+    line-height: 1.15;
+    margin-bottom: 12px;
   }
 
   .hero-visual {
-    min-height: 280px;
+    min-height: 260px; /* More compact */
   }
 
   .visual-card.primary {
     right: 5%;
-    height: 60%;
+    height: 58%;
+    z-index: 1; /* Keep behind */
   }
 
   .visual-card.secondary {
-    left: 10%;
-    height: 52%;
+    left: 8%;
+    height: 50%;
+    z-index: 1; /* Keep behind */
   }
 
   .hero-model {
     width: 90px;
     height: 90px;
-    bottom: 0;
-    z-index: 50; /* Ensure barrel is on top of cards on mobile */
+    bottom: -10px;
+    left: 0;
+    z-index: 200 !important; /* Force to the very front */
+    position: relative;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+  }
+
+  .section {
+    padding: 40px 0; /* Minimalist consistent spacing */
   }
 
   .hero-actions {
     justify-content: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 20px;
   }
 
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+    padding: 10px 16px;
   }
 
-  /* Form actions centering */
+  /* Form actions centering & compactness */
   .form-actions {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .form-actions .btn {
@@ -2630,32 +2642,31 @@ body.light-mode .theme-toggle .icon-moon {
     justify-content: center;
   }
 
-  /* CTA Refinement */
-  .cta {
-    padding: 40px 24px;
-    background: linear-gradient(135deg, rgba(18, 47, 64, 0.95), rgba(7, 19, 29, 0.98));
-    border: 1px solid rgba(226, 68, 58, 0.2);
-    box-shadow: 0 0 40px rgba(226, 68, 58, 0.1);
-    border-radius: 24px;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
+  .form-note {
+    font-size: 0.8rem;
+    margin-top: 8px;
   }
 
-  .cta::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(226, 68, 58, 0.05) 0%, transparent 40%);
-    pointer-events: none;
+  /* Minimalist CTA */
+  .cta {
+    padding: 30px 20px; /* More compact */
+    background: linear-gradient(135deg, rgba(10, 26, 38, 0.98), rgba(7, 19, 29, 0.99));
+    border: 1px solid rgba(226, 68, 58, 0.15);
+    border-radius: 18px; /* Slightly tighter radius */
+  }
+
+  .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
   }
 
   .cta-actions {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .cta-actions .btn {
@@ -2663,33 +2674,49 @@ body.light-mode .theme-toggle .icon-moon {
     justify-content: center;
   }
 
-  /* Footer Refinement */
+  /* Minimalist & Organized Footer */
   .site-footer {
-    padding: 60px 0 40px;
-    background: rgba(7, 19, 29, 0.98);
-    border-top: 1px solid var(--color-edge);
+    padding: 40px 0 30px;
+    background: #050d14; /* Darker, more solid */
+    border-top: 1px solid rgba(238, 245, 251, 0.05);
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px; /* Tighter organization */
     text-align: center;
   }
 
+  .footer-grid > div {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(238, 245, 251, 0.03);
+  }
+
+  .footer-grid > div:last-child {
+    border-bottom: none;
+  }
+
   .footer-label {
-    margin-bottom: 20px;
-    font-size: 0.85rem;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--color-accent);
+  }
+
+  .site-footer p {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 
-/* Extra small devices */
-@media (max-width: 480px) {
+/* Very small devices adjustments */
+@media (max-width: 400px) {
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   
   .logo-text {
-    display: none; /* Only logo icon on very small screens if necessary */
+    display: none;
   }
 }
