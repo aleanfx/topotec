@@ -2741,6 +2741,10 @@ body.light-mode .theme-toggle .icon-moon {
     padding: 40px 0;
   }
 
+  .visual-card .visual-tags {
+    display: none !important;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
