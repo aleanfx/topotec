@@ -2603,13 +2603,14 @@ body.light-mode .theme-toggle .icon-moon {
   }
 
   .hero-model {
-    width: 75px; /* Proportional to cards */
-    height: 75px;
-    bottom: -5px;
-    left: 4%;
-    position: absolute; /* Reverting to absolute for better layering control with PART */
-    z-index: 100 !important;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    width: 140px; /* More prominent */
+    height: 140px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2000 !important;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
   }
 
   .section {
