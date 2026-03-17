@@ -149,9 +149,9 @@ const I18N = {
     contact_info_item_1_label: "Persona de contacto",
     contact_info_item_1_value: "Gonzalo Guti&eacute;rrez",
     contact_info_item_2_label: "Tel&eacute;fonos",
-    contact_info_item_2_value: "0412-9638465 / 0414-8117785",
+    contact_info_item_2_value: "0412 9655004 / 0412 9638465",
     contact_info_item_3_label: "Correo",
-    contact_info_item_3_value: "topotecggcaingenieria@gmail.com",
+    contact_info_item_3_value: "topotecggca@gmail.com",
     contact_info_item_4_label: "Ubicaci&oacute;n",
     contact_info_item_4_value: "Anzo&aacute;tegui, Venezuela",
     contact_highlight_1_label: "Respuesta",
@@ -332,9 +332,9 @@ const I18N = {
     contact_info_item_1_label: "Contact person",
     contact_info_item_1_value: "Gonzalo Gutierrez",
     contact_info_item_2_label: "Phones",
-    contact_info_item_2_value: "0412-9638465 / 0414-8117785",
+    contact_info_item_2_value: "0412 9655004 / 0412 9638465",
     contact_info_item_3_label: "Email",
-    contact_info_item_3_value: "topotecggcaingenieria@gmail.com",
+    contact_info_item_3_value: "topotecggca@gmail.com",
     contact_info_item_4_label: "Location",
     contact_info_item_4_value: "Anzoategui, Venezuela",
     contact_highlight_1_label: "Response",
@@ -469,7 +469,7 @@ const initForm = () => {
     };
     const subject = formatTemplate(dict.form_mail_subject, payload);
     const body = formatTemplate(dict.form_mail_body, payload);
-    const email = form.dataset.mailto || "topotecggcaingenieria@gmail.com";
+    const email = form.dataset.mailto || "topotecggca@gmail.com";
     const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
   });
