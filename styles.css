@@ -2734,24 +2734,40 @@ body.light-mode .theme-toggle .icon-moon {
 
   /* Minimalist & Organized Footer */
   .site-footer {
-    padding: 32px 0 20px;
+    padding: 24px 0 16px; /* Tightened padding */
+    border-top: 1px solid rgba(238, 245, 251, 0.05); /* Softer edge */
   }
 
   .footer-grid {
-    gap: 16px;
+    gap: 12px; /* Denser grid */
   }
 
-  .footer-grid>div {
-    padding-bottom: 12px;
+  .footer-grid > div {
+    padding-bottom: 8px; /* Less air between blocks */
+  }
+
+  .site-footer strong {
+    font-size: 0.85rem; /* Shrunken title */
+    letter-spacing: 0.05em;
   }
 
   .footer-label {
-    margin-bottom: 8px;
-    font-size: 0.75rem;
+    margin-bottom: 4px;
+    font-size: 0.72rem; /* Shrunken labels */
+    color: var(--color-ink-soft);
+    opacity: 0.8;
   }
 
   .site-footer p {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Shrunken content text */
+    line-height: 1.4;
+    color: rgba(238, 245, 251, 0.7);
+    margin-bottom: 2px;
+  }
+
+  .site-footer p span {
+    font-weight: 500;
+    color: var(--color-ink-soft);
   }
 }
 
