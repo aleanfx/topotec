@@ -1091,16 +1091,16 @@ body.page-loaded .nav-actions {
 .modal {
   position: fixed;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  display: grid; /* Switched to Grid for more robust centering */
+  place-items: center;
+  padding: 16px; 
   background: rgba(7, 19, 29, 0.78);
   backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition);
-  z-index: 3000; /* Ensure it's above the header (2000+) */
+  z-index: 3000;
+  overflow-y: auto; /* Fallback for very long content */
 }
 
 .modal.is-open {
@@ -2999,16 +2999,24 @@ body.light-mode .theme-toggle .icon-moon {
     font-size: 1.4rem;
   }
 
-  /* Modal Mobile Refinements */
+  /* Modal Mobile Refinements: Absolute Centering Fix */
   .modal {
-    padding: 12px !important;
+    padding: 10px !important;
+    place-items: center !important;
+    display: grid !important;
   }
 
   .modal-dialog {
-    width: 95vw !important;
-    max-height: 92vh !important;
+    width: 94vw !important;
+    max-height: 88vh !important; /* Slightly more breathing room */
     padding: 20px !important;
-    margin: auto !important;
+    margin: 0 !important; /* Grid handles centering; clear any margins */
+    transform: scale(0.98) !important; /* Reset transform for centering */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .modal.is-open .modal-dialog {
+    transform: scale(1) !important;
   }
 
   .modal-grid {
