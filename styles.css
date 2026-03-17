@@ -38,6 +38,10 @@ body {
   overflow-x: hidden;
 }
 
+body.modal-open {
+  overflow: hidden !important;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -1091,15 +1095,16 @@ body.page-loaded .nav-actions {
 .modal {
   position: fixed;
   inset: 0;
+  height: 100dvh; /* Stable height for mobile browsers */
   display: grid; /* Switched to Grid for more robust centering */
   place-items: center;
-  padding: 16px; 
-  background: rgba(7, 19, 29, 0.78);
-  backdrop-filter: blur(6px);
+  padding: 16px;
+  background: rgba(7, 19, 29, 0.85); /* Slightly darker for better contrast */
+  backdrop-filter: blur(8px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition);
-  z-index: 3000;
+  z-index: 9999; /* Top level */
   overflow-y: auto; /* Fallback for very long content */
 }
 
@@ -2999,20 +3004,23 @@ body.light-mode .theme-toggle .icon-moon {
     font-size: 1.4rem;
   }
 
-  /* Modal Mobile Refinements: Absolute Centering Fix */
+  /* Modal Mobile Refinements: Absolute Viewport Centering */
   .modal {
-    padding: 10px !important;
+    padding: 12px !important;
+    height: 100dvh !important;
     place-items: center !important;
     display: grid !important;
+    z-index: 9999 !important;
   }
 
   .modal-dialog {
-    width: 94vw !important;
-    max-height: 88vh !important; /* Slightly more breathing room */
-    padding: 20px !important;
-    margin: 0 !important; /* Grid handles centering; clear any margins */
-    transform: scale(0.98) !important; /* Reset transform for centering */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+    width: 92vw !important; /* Slightly narrower for better framing */
+    max-height: 85vh !important; /* Cap height to ensure it doesn't hit edge-to-edge */
+    padding: 24px !important;
+    margin: 0 !important;
+    transform: scale(0.98) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8) !important;
+    overflow-y: auto !important; /* Ensure internal scrolling if content is long */
   }
 
   .modal.is-open .modal-dialog {
