@@ -112,12 +112,7 @@
               <span class="visual-tag" data-i18n="home_visual_tag_cap_3">Automatizacion</span>
             </div>
           </div>
-          <div class="hero-model" aria-hidden="true">
-            <model-viewer data-model-viewer src="assets/photos/oil_barrel.glb" alt="Barril de petroleo" camera-controls
-              auto-rotate rotation-per-second="22deg" auto-rotate-delay="800" disable-zoom interaction-prompt="none"
-              reveal="auto" environment-image="neutral" exposure="1.2" shadow-intensity="0"
-              loading="eager"></model-viewer>
-          </div>
+          <!-- Barrel removed from here for mobile space optimization -->
           <div class="visual-card secondary">
             <div class="meta" data-i18n="home_visual_meta_2">Topografia</div>
             <h3 data-i18n="home_visual_title_2">Precision de campo</h3>
@@ -160,6 +155,12 @@
         <div class="reveal">
           <p class="eyebrow" data-i18n="home_model_eyebrow">Exploraci&oacute;n 3D</p>
           <h2 class="section-title" data-i18n="home_model_title">Modelo 3D de referencia</h2>
+          <div class="section-model-barrel" aria-hidden="true">
+            <model-viewer data-model-viewer src="assets/photos/oil_barrel.glb" alt="Barril de petroleo" camera-controls
+              auto-rotate rotation-per-second="30deg" auto-rotate-delay="0" disable-zoom disable-pan interaction-prompt="none"
+              reveal="auto" environment-image="neutral" exposure="1.2" shadow-intensity="0"
+              loading="eager" camera-orbit="0deg 90deg 100%"></model-viewer>
+          </div>
           <p class="section-subtitle" data-i18n="home_model_text">
             Visualizaci&oacute;n interactiva para proyectos de energ&iacute;a e infraestructura.
           </p>

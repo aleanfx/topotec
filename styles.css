@@ -491,7 +491,8 @@ body.page-loaded .nav-actions {
   color: var(--color-ink);
 }
 
-.hero-model {
+.hero-model,
+.section-model-barrel {
   position: absolute;
   left: -8px;
   bottom: 4%;
@@ -503,6 +504,10 @@ body.page-loaded .nav-actions {
   opacity: 0.85;
   filter: drop-shadow(0 12px 22px rgba(3, 10, 16, 0.45));
   z-index: 2;
+}
+
+.section-model-barrel {
+  display: none; /* Only show on mobile */
 }
 
 .hero-model model-viewer {
@@ -2605,15 +2610,31 @@ body.light-mode .theme-toggle .icon-moon {
     z-index: 1;
   }
 
+  /* Old Hero Model hidden/removed from here */
   .hero-model {
-    width: 110px; /* Balanced pop size */
-    height: 110px;
-    bottom: -15px;
-    left: auto;
-    right: 5%; /* Side placement where text is unlikely to be */
+    display: none;
+  }
+
+  .model-section .reveal {
+    position: relative;
+    padding-right: 60px; /* Space for the shrunken barrel */
+  }
+
+  .section-model-barrel {
+    display: grid;
+    place-items: center;
     position: absolute;
-    z-index: 2000 !important;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 65px;
+    height: 65px;
+    z-index: 10;
+  }
+
+  .section-model-barrel model-viewer {
+    width: 100%;
+    height: 100%;
   }
 
   .section {
