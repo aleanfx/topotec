@@ -2584,7 +2584,24 @@ body.light-mode .theme-toggle .icon-moon {
     line-height: 1.2;
   }
 
+  .hero-visual {
+    min-height: 280px;
+  }
+
+  .visual-card.primary {
+    right: 5%;
+    height: 60%;
+  }
+
+  .visual-card.secondary {
+    left: 10%;
+    height: 52%;
+  }
+
   .hero-model {
+    width: 90px;
+    height: 90px;
+    bottom: 0;
     z-index: 50; /* Ensure barrel is on top of cards on mobile */
   }
 
