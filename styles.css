@@ -2606,13 +2606,12 @@ body.light-mode .theme-toggle .icon-moon {
   }
 
   .hero-model {
-    width: 130px;
-    /* Premium size for prominence */
-    height: 130px;
-    bottom: -8px; /* Subtle overlap */
-    left: 4%;
+    width: 110px; /* Balanced pop size */
+    height: 110px;
+    bottom: -15px;
+    left: auto;
+    right: 5%; /* Side placement where text is unlikely to be */
     position: absolute;
-    /* Ensure it overlays the cards correctly */
     z-index: 2000 !important;
     filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
   }
